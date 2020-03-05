@@ -16,5 +16,5 @@ def webClientLogin(username, password, minkey1, maxkey1, minkey2, maxkey2, url):
     key1=bytes(key1, "utf-8").decode("unicode_escape") #translating octal characters to char
     key2=bytes(key2, "utf-8").decode("unicode_escape") #translating octal characters to char
     encryptmd5= md5.hexMD5(key1+password+key2) #encrypt the password
-    finallogin=url+"username="+username+"&password="+encryptmd5 #wrap all the variables
+    finallogin=url+"?username="+username+"&password="+encryptmd5 #wrap all the variables
     requests.post(finallogin) #make the final requests
